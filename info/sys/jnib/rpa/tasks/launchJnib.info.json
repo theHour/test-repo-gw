@@ -1,0 +1,1 @@
+{"displayName":"Test - Launch JNIB","category":"RPA JNIB Tests","tags":[""],"description":"Basic Task where you can launch a JNIB from a JNIB RPA task","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/launchJnib.jtype","interactiveRuntimeRef":null}

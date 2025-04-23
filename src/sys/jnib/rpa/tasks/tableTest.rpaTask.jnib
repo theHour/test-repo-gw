@@ -1,0 +1,25 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Table Test",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/table.jtype",
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	
+	// TODO: Retrieve the RPA Configuration Data
+	// var rpaConfig = _.get(getStartObj(), "rpaConfig", {});
+	
+	// TODO: code RPA Task here
+	
+	// TODO: If this RPA Task needs to return data for the following RPA tasks in the flow to capture, use the rpaResult property in the getFinishObj() object.
+	// getFinishObj().rpaResult = {};
+},
+

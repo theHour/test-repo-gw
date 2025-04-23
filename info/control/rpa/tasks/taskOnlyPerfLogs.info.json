@@ -1,0 +1,1 @@
+{"displayName":"Test - Task Only Perf Logs","category":"RPA JNIB Tests","tags":[""],"description":"Task is executed in taskOnly mode. It will write BODY parameter to logs as many times as provided in REPEAT COUNT parameter.","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/taskOnlyPerfLogs.jtype","interactiveRuntimeRef":null,"executionMode":"taskOnly"}

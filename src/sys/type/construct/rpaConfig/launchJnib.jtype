@@ -1,0 +1,22 @@
+{
+	"path": "/sys/jnib/lib/functions/launched.jnib",
+	"path@Display.label": "JNIB Path",
+	"message": "",
+	"message@Display.label": "Message",
+	"object@Display.label": "Object",
+	"object": "",
+	"object@Display.editor": {
+		"minLineCount": 10,
+		"maxLineCount": 20,
+		"tabSize": 1
+	},
+	"object@Display.styles": {
+		"cssStyle": {
+			"background-color": "white"
+		},
+		"cssClasses": [
+			"text-area-style"
+		]
+	},
+	"object@Display.multiline": true
+}

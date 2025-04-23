@@ -1,0 +1,78 @@
+__ : loadNIB("/sys/jnib/lib/shared/util.lib.jnib"),
+
+"@Info": {
+    "displayName": "Launch Provision",
+        "category": "RPA JNIB Tests",
+        "tags": [""],
+        "description": "Launches the same provisioning script for all targets",
+        "auth": "operate",
+        "configTypeRef" : "/sys/type/construct/rpaConfig/testProvisionJnib.jtype",
+        "interactiveRuntimeRef" : null
+},
+
+run: function() {
+    let rpaConfig = _.get(getStartObj(), "rpaConfig", {});
+    let rpaState = _.get(getStartObj(), "rpaState", {});
+
+    let scriptType = thisNib.getScriptType(rpaConfig.script);
+    let scriptInstanceName = thisNib.getScriptInstanceName(rpaConfig.script);
+    let scriptPath = "/org/instance/construct/script/" + scriptType + "/" + scriptInstanceName + ".json";
+
+    let actionStruct = {
+		"actionMode": (rpaConfig.preview) ? "preview" : "provision",
+        "forceProvisioning": true,
+        "userCapturedData": {
+            "summaryDescription" : _.get(rpaConfig, "summaryDescription"),
+            "addedLog" : _.get(rpaConfig, "addedLog"),
+        },
+        "actionRequests": [
+            {
+                "actionKey": scriptPath
+            }
+        ],
+        "startObj": { // control
+            "auxActionData": {
+                "startObjAuxActionData": true
+            }
+        },
+        "explicitOrder": true
+    };
+    
+    _.set(getFinishObj(), ['rpaResult', 'actionStruct'], actionStruct);
+    log.tag({actionStruct: getFinishObj().rpaResult.actionStruct}).debug("Watching finishObj");
+},
+
+getScriptType: function(obj) {
+	if (!obj) {
+		abort(-11, "FATAL: Failed to Retrieve the Metadata from an Empty Object for getScriptType()");
+	}
+	
+	if (obj["@source"] !== undefined) {
+		var source = obj["@source"].typeKey.jmatch(/script\/([a-zA-Z0-9-_ ]+)/);
+		return source[1];
+	}
+	else if (obj["@meta"] !== undefined) {
+		var source = obj["@meta"].path.jmatch(/script\/([a-zA-Z0-9-_ ]+)/);
+		return source[1];
+	}
+	else {
+		return undefined;
+	}
+},
+
+getScriptInstanceName: function(obj) {
+	if (!obj) {
+		abort(-11, "FATAL: Failed to Retrieve the Metadata from an Empty Object for getScriptInstanceName()");
+	}
+	
+	if (obj["@source"] !== undefined) {
+		return obj["@source"].instanceName;
+	}
+	else if (obj["@meta"] !== undefined) {
+		var source = obj["@meta"].path.jmatch(/script\/\w+\/([a-zA-Z0-9-_ @\.]+)/);
+		return source[1].replace(/\.json/, "");
+	}
+	else {
+		return undefined;
+	}
+}

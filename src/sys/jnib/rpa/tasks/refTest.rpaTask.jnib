@@ -1,0 +1,23 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+__ : loadNIB("/sys/jnib/lib/shared/util.lib.jnib"),
+
+"@Info": {
+    "displayName": "Secret Test",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Secret Test",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/secretTest.jtype",
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	
+	var rpaConfig = _.get(getStartObj(), "rpaConfig", {});
+	var rpaState = _.get(getStartObj(), "rpaState", {});
+	
+	log.warning(JSON.stringify(rpaConfig, null, 2));
+},

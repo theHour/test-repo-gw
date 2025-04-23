@@ -1,0 +1,1 @@
+{"displayName":"Launch Provision","category":"RPA JNIB Tests","tags":[""],"description":"Launches the same provisioning script for all targets","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/testProvisionJnib.jtype","interactiveRuntimeRef":null}

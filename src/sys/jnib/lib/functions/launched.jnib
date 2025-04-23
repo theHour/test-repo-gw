@@ -1,0 +1,6 @@
+
+run : function() {
+	log.info('In JNIB');
+	var params = getStartObj();
+	log.info('Launch Params: ' + JSON.stringify(params, 0, 2));
+},

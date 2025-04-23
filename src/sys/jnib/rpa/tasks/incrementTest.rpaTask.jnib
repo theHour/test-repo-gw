@@ -1,0 +1,39 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Increment",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Basic Task where you can increment a number by 1 for testing wait for",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/incrementTest.jtype",
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		var increment = _.get(startObj, "rpaConfig.increment");
+
+		increment = parseInt(increment);
+		
+		if (increment && isNaN(increment) === false) {
+			increment = increment + 1;
+		} else {
+			increment = 1;
+		}
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	} finally {
+		// TODO: If this RPA Task needs to return data for the following RPA tasks in the flow to capture, use the rpaResult property in the getFinishObj() object.
+		getFinishObj().rpaResult = {
+			increment: increment
+		};
+	}	
+},
+

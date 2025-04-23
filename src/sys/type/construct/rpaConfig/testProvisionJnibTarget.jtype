@@ -1,0 +1,12 @@
+{
+	"script@Display.label" : "Script",
+	"script@Ref": {
+		"path": "/org/instance/construct/script/csTest/*"
+	},
+	"preview": true,
+	"preview@Display.label": "Preview",
+	"summaryDescription" : "",
+	"addedLog" : "",
+	"targetActionStructVar": "",
+	"targetActionStructVar@Display.description": "If null then then action struct per target will be created based on above, if object the object is action struct, if target vars then they will be mapped"
+}

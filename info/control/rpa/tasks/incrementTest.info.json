@@ -1,0 +1,1 @@
+{"displayName":"Test - Increment","category":"RPA JNIB Tests","tags":[""],"description":"Basic Task where you can increment a number by 1 for testing wait for","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/incrementTest.jtype","interactiveRuntimeRef":null}

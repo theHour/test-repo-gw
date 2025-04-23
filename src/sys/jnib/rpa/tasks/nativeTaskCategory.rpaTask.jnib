@@ -1,0 +1,18 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "JNIB native task category",
+    "category": "Gluware - Config Model Editor",
+    "tags": [""],
+    "description": "RPA testing task for native task category",
+    "auth": "operate",
+    "configTypeRef" : null,
+    "executionMode": "taskOnly",
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	log.info("JNIB native task category test");
+},

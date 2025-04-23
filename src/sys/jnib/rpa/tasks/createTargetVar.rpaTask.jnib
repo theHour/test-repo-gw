@@ -1,0 +1,51 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Create Target Var",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Basic Task where you can create a target var",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/createTargetVar.jtype",
+    
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		var rpaState = _.get(startObj, "rpaState", {});
+		var targetRefs = _.get(rpaState, "targetRefs", []);
+		var varData = _.get(startObj, "rpaConfig.varData");
+		log.info("RPA Config" + JSON.stringify(rpaConfig, 0, 2));
+		try { 
+			varData = JSON.parse(varData);
+		} catch(e) {
+			log.info("Unable to parse in JSON keeping as is");
+		}
+		log.info("Var Data: " + JSON.stringify(varData, 0, 2));
+
+		var targetResponse = {};
+		
+		for (var target in targetRefs) {
+			var entityId = _.get(targetRefs[target], "device.entityId");
+			var name = _.get(targetRefs[target], "device.name");
+			log.info("Setting varData to device " + name);
+			
+			targetResponse[entityId] = varData;
+		}
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	} finally {
+		// TODO: If this RPA Task needs to return data for the following RPA tasks in the flow to capture, use the rpaResult property in the getFinishObj() object.
+		getFinishObj().rpaResult = {
+			targetResponse: targetResponse,
+		};
+	}	
+},
+

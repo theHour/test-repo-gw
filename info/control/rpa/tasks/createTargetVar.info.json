@@ -1,0 +1,1 @@
+{"displayName":"Create Target Var","category":"RPA JNIB Tests","tags":[""],"description":"Basic Task where you can create a target var","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/createTargetVar.jtype","interactiveRuntimeRef":null}

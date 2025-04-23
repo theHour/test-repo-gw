@@ -1,0 +1,60 @@
+
+"jnibFiles" : {
+  "src/sys/jnib/lib/functions/launched.jnib" : {
+    "sha256Hash" : "F30834502E0B95261F2724334BEFB61B6C43560342BE99BB60BEC950804B0170"
+  },
+  "src/sys/jnib/rpa/tasks/createTargetVar.rpaTask.jnib" : {
+    "sha256Hash" : "78592A0BF3740ECF052EE992782383F6DD3D9417488D7EECAFA0354143346B1D"
+  },
+  "src/sys/jnib/rpa/tasks/exampleInputParameters.rpaTask.jnib" : {
+    "sha256Hash" : "6D72B122370F75E3C27E22F69616D938727CA6B5A675155F4253B5E43938412B"
+  },
+  "src/sys/jnib/rpa/tasks/incrementTest.rpaTask.jnib" : {
+    "sha256Hash" : "C18F8F927A2F87A54D7661EEC14D3150B204ADCBD85D4EF454CBE949F67E7F54"
+  },
+  "src/sys/jnib/rpa/tasks/installationExecModeDummyTest.rpaTask.jnib" : {
+    "sha256Hash" : "51D33382C9AF564F6976AB8E591B379599CE8F1B49709C732F92E6EEC1460910"
+  },
+  "src/sys/jnib/rpa/tasks/launchJnib.rpaTask.jnib" : {
+    "sha256Hash" : "183A519DCEA0A02040055381F25F9481D2BE755430AA0F486A55E21989CCFB2F"
+  },
+  "src/sys/jnib/rpa/tasks/nativeTaskCategory.rpaTask.jnib" : {
+    "sha256Hash" : "E1D127EE7BA0E51124C3FC323FE91B9F7AC57D926326D20415B40B81DBF91FA5"
+  },
+  "src/sys/jnib/rpa/tasks/perfLogs.rpaTask.jnib" : {
+    "sha256Hash" : "B376FB316C68AFF62173ED3730AA825C77309B620DB87DB3C566B38FCAA8998F"
+  },
+  "src/sys/jnib/rpa/tasks/provisionExecModePerTargetTest.rpaTask.jnib" : {
+    "sha256Hash" : "337E4D376D1EE308E4178BEFE5CA7D12AA3C4283E9A74BA9972BA7E560127B83"
+  },
+  "src/sys/jnib/rpa/tasks/provisionExecModeTest.rpaTask.jnib" : {
+    "sha256Hash" : "6539C0E80117701B24033D1D624CD2C95FD7FBED30A37F14B745A42F54648427"
+  },
+  "src/sys/jnib/rpa/tasks/refTest.rpaTask.jnib" : {
+    "sha256Hash" : "82488C03B8DADD816B562836918F74C036F320027BE9F213FC3447D51CC14195"
+  },
+  "src/sys/jnib/rpa/tasks/tableTest.rpaTask.jnib" : {
+    "sha256Hash" : "35194CCED973989BF2688D0B33D32BC2F5FE8C414B3EE0E6B15C9590FC5B1600"
+  },
+  "src/sys/jnib/rpa/tasks/targetOnlyPerfLogs.rpaTask.jnib" : {
+    "sha256Hash" : "509E0F26C5DC32A68B0AB7D6E5C7F33AACFDA7E8875B3BA27E43C27C7C04F8E7"
+  },
+  "src/sys/jnib/rpa/tasks/targetsTest.rpaTask.jnib" : {
+    "sha256Hash" : "13A61FCB1E23DE9857855C0A2BD7DBE27A78BB462834A93A92B050DE03C3A42E"
+  },
+  "src/sys/jnib/rpa/tasks/taskOnlyPerfLogs.rpaTask.jnib" : {
+    "sha256Hash" : "EA95A450C4AF98024A5AEED639EC819C0356D9AFB548E4BD940292672160CAC8"
+  },
+  "src/sys/jnib/rpa/tasks/taskOrTargetPerfLogs.rpaTask.jnib" : {
+    "sha256Hash" : "4BBC1A9B7832AC691E848168C7D507B8D6D9193D371F51B994EDA02706BE38BB"
+  },
+  "src/sys/jnib/rpa/tasks/testProvisionJnib.rpaTask.jnib" : {
+    "sha256Hash" : "469003B2CC393A07266FE6215AAF785038C56FF9EB065A95DB09098FB1112B99"
+  },
+  "src/sys/jnib/rpa/tasks/testProvisionJnibPerTarget.rpaTask.jnib" : {
+    "sha256Hash" : "1FF2309A2F8747E3BB4ABB0B3D63C284763C327E86795C06BD71D6DC082C2DD9"
+  },
+  "src/sys/jnib/scripts/csTest/csTest.jnib" : {
+    "sha256Hash" : "3A18D360EE86496D4D3A2317EE27EDBCD5E0D48866BD848D22B809E0BEB68A7E"
+  }
+}

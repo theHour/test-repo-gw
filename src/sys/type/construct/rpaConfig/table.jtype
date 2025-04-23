@@ -1,0 +1,36 @@
+{
+	"report@Display.table": {
+		"showAdd": false,
+		"showDelete": false,
+		"showReorder": false,
+		"showLineNumbers": false,
+		"showDetailForm": false,
+		"readOnly": true,
+		"multiSelect": false,
+		"minLineCount": 12,
+		"detailFormLabel": "",
+		"forceFitColumns" : true,
+		"columns" : {
+			"0" : {
+				"readOnly" : true
+			},
+			"1" : {
+				"readOnly" : true
+			},
+			"2" : {
+				"readOnly" : true
+			}
+		}
+	},
+	"report": [
+		{
+			"0@Display.label": "Device",
+			"0": "",
+			"1@Display.label": "Command",
+			"1": "",
+			"2@Display.label": "responseLine",
+			"2": ""
+		}
+	],
+	"report@Display.label": ""
+}

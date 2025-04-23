@@ -1,0 +1,54 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Launch JNIB",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Basic Task where you can launch a JNIB from a JNIB RPA task",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/launchJnib.jtype",
+    
+    "interactiveRuntimeRef" : null
+},
+
+
+run : function() {
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		var rpaState = _.get(startObj, "rpaState", {});
+		// This is created from looking at different code references
+		// definition https://bitbucket.org/gluware/jnibengine/src/ed1d246d13f8ab83243aa6a9184ea3be53d4f10e/src/main/resources/com/gluenetworks/nib/jscript/system._js?at=main#lines-256
+		// implementation 
+		
+		// seems like this is what OHV is trying to do https://bitbucket.org/gluware/cisco-trustsec-sgt/src/549ea7dffbbca9cbd675d590c1ca1081dba6eb36/src/sys/jnib/rpa/tasks/ctsPropagationCheck.rpaTask.jnib?at=master#ctsPropagationCheck.rpaTask.jnib-159
+		var subObj = _.get(rpaConfig, 'object', {});
+		
+		subObj.uniqueId = util.generateUUID();
+		
+		// subObj.orgId = orgId;
+		// is this needed? 
+		// subObj.connInfo = util.isEmpty(connInfo)? node.entryConnection : connInfo;
+		log.info("Launching JNIB from RPA task with following object" + JSON.stringify(subObj, 0, 2));
+		
+		var launchedRef = system.launchJNIB(_.get(rpaConfig, 'message'), 
+				_.get(rpaConfig, 'path', '/sys/jnib/lib/functions/launched.jnib'),
+				subObj);
+		
+		// pull in information from switches from a specific show command 
+		// similar type of a setup 
+		
+		getFinishObj().rpaResult = {
+			launchedRef: launchedRef,
+			subObj: subObj,
+		};
+		log.info("End launching JNIB Task");
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	}
+},
+

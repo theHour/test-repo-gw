@@ -1,0 +1,46 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Perf Logs",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Basic Task where you can create a lot of logs in a JNIB",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/perfLogs.jtype",
+    
+    "interactiveRuntimeRef" : null
+},
+
+
+run : function() {
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		log.info(JSON.stringify(rpaConfig, 0, 2));
+		var rpaState = _.get(startObj, "rpaState", {});
+		var targetRefs = _.get(rpaState, 'targetRefs');
+		var body = _.get(rpaConfig, 'body', {});
+		var repeate = _.get(rpaConfig, 'repeate', 1);
+		var finishObj = {};
+		var targetResponse = {};
+		
+		_.forEach(targetRefs, function(target) {
+			targetResponse[target.device.entityId] = body;
+		});
+		
+		for (let i = 0; i < repeate; i++) {
+			log.info(JSON.stringify(body, 0, 2));
+		}
+		
+		getFinishObj().rpaResult = {
+			targetResponse: targetResponse,
+		};
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	}
+},
+

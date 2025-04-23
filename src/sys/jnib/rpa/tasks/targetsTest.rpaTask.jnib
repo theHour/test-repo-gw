@@ -1,0 +1,78 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Targets",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Basic Task where you can set the output status for the targets in the workflow",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/targetsTest.jtype",
+    
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		var rpaState = _.get(startObj, "rpaState", {});
+		var targetRefs = _.get(rpaState, "targetRefs", []);
+		var targetStatus = _.get(startObj, "rpaConfig.targetStatus");
+		var numberTargets = parseInt(_.get(startObj, "rpaConfig.numberTargets"));
+		var failTask = _.get(startObj, "rpaConfig.failTask", false);
+		var targetUpdate = {
+			markFailDevices: [],
+			markIgnoreDevices: [],
+			removeDevices: [],
+			addDevices: [],
+		}
+		log.debug("Start Object: " + JSON.stringify(startObj));
+		log.debug("Start Object RPA Config: " + JSON.stringify(rpaConfig));
+		log.debug("Start Object RPA State: " + JSON.stringify(targetRefs));
+		
+		// todo give a single JINB that controls and does the different tests
+		var countTar = 0; 
+		
+		if (numberTargets != 0 || numberTargets != null || isNaN(numberTargets) === false) {
+			targetRefs = _.slice(targetRefs, 0, numberTargets);
+		}
+		
+		for (var target in targetRefs) {
+			var entityId = _.get(targetRefs[target], "device.entityId");
+			var name = _.get(targetRefs[target], "device.name");
+	
+			if (targetStatus === "ignore") {
+				log.debug("Setting target to ignore: " + name + " " + entityId);
+				targetUpdate.markIgnoreDevices.push(entityId);
+			} else if (targetStatus === "remove") {
+				log.debug("Setting target to remove: " + name + " " + entityId);
+				targetUpdate.removeDevices.push(entityId);
+				
+			} else if (targetStatus === "fail") {
+				log.debug("Setting target to failed: " + name + " " + entityId);
+				targetUpdate.markFailDevices.push(entityId);
+			} else {
+				log.debug("Not modifying target success: " + name + " " + entityId);
+			}
+		}
+
+		if (failTask) {
+			throw new Error("Failing task test"); 
+		}
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	} finally {
+		// TODO: If this RPA Task needs to return data for the following RPA tasks in the flow to capture, use the rpaResult property in the getFinishObj() object.
+		getFinishObj().rpaResult = {
+			rpaConfig: rpaConfig,
+			rpaState: rpaState,
+			targetUpdate: targetUpdate,
+			numResults: targetRefs.length,
+		};
+	}	
+},
+

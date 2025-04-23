@@ -1,0 +1,1 @@
+{"displayName":"Test - Provision Exec Mode Test","category":"RPA JNIB Tests","tags":[""],"description":"Launches the same provisioning script for all targets","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/provisionExecModeTest.jtype","interactiveRuntimeRef":null,"executionMode":"provision"}

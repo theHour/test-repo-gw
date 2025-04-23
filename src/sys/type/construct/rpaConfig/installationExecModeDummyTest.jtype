@@ -1,0 +1,20 @@
+{
+	"repeat@Number": {},
+	"repeat@Display.label" : "Repeat count",
+	"body@Display.label": "Body",
+	"body": "",
+	"body@Display.editor": {
+		"minLineCount": 10,
+		"maxLineCount": 20,
+		"tabSize": 1
+	},
+	"body@Display.styles": {
+		"cssStyle": {
+			"background-color": "white"
+		},
+		"cssClasses": [
+			"text-area-style"
+		]
+	},
+	"body@Display.multiline": true
+}

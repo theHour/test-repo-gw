@@ -1,0 +1,1 @@
+{"displayName":"Test - Target Only Perf Logs","category":"RPA JNIB Tests","tags":[""],"description":"Task is executed in targetOnly mode. It will write BODY parameter to logs as many times as provided in REPEAT COUNT parameter.","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/targetOnlyPerfLogs.jtype","interactiveRuntimeRef":null,"executionMode":"targetOnly"}

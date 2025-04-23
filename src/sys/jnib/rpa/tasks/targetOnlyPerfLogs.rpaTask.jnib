@@ -1,0 +1,74 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Target Only Perf Logs",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "Task is executed in targetOnly mode. It will write BODY parameter to logs as many times as provided in REPEAT COUNT parameter.",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/targetOnlyPerfLogs.jtype",
+    "interactiveRuntimeRef" : null,
+    "executionMode": "targetOnly"
+},
+
+run : function() {
+	
+	try {		
+		// TODO: Retrieve the RPA Configuration Data
+		var startObj = getStartObj();
+		var rpaConfig = _.get(startObj, "rpaConfig", {});
+		log.info(JSON.stringify(rpaConfig, 0, 2));
+		var rpaState = _.get(startObj, "rpaState", {});
+		var targetRefs = _.get(rpaState, 'targetRefs');
+		var body = _.get(rpaConfig, 'body', {});
+		var repeat = _.get(rpaConfig, 'repeat', 1);
+		var finishObj = {};
+		var targetResponse = {};
+		var randomTargetState = 0;
+		var targetUpdate = {
+				markFailDevices: [],
+				markIgnoreDevices: [],
+				removeDevices: [],
+				addDevices: [],
+			}
+		
+		_.forEach(targetRefs, function(target) {
+			targetResponse[target.device.entityId] = body;
+			randomTargetState = thisNib.getRandomInt(3);
+			if(randomTargetState == 1) {
+				targetUpdate.markFailDevices.push(thisNib.getConstructPathOrDeviceId(target));
+			} else if (randomTargetState == 2) {
+				targetUpdate.markIgnoreDevices.push(thisNib.getConstructPathOrDeviceId(target))
+			}
+		});
+		
+		for (let i = 0; i < repeat; i++) {
+			log.info(JSON.stringify(body, 0, 2));
+		}
+		
+		getFinishObj().rpaResult = {
+			targetResponse: targetResponse,
+			targetUpdate: targetUpdate,
+		};
+	} catch(err) {
+		log.error(err);	
+		throw err;
+	}
+},
+
+getConstructPathOrDeviceId: function(target) {
+    if(!_.isEmpty(_.get(target, 'device.constructPath'))) {
+        return target.device.constructPath;
+    } else if(!_.isEmpty(_.get(target, 'node.path'))) {
+        return target.node.path;
+    } else {
+        return target.device.entityId;
+    }
+},
+
+getRandomInt: function(max) {
+    return Math.floor(Math.random() * max);
+}
+

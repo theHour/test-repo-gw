@@ -1,0 +1,13 @@
+{
+	"targetStatus@Display.label": "Target Status",
+	"targetStatus@Enum": [
+		"success",
+		"ignore",
+		"remove",
+		"fail"
+	],
+	"failTask": false,
+	"failTask@Display.label": "Fail Task",
+	"numberTargets": "",
+	"numberTargets@Display.label": "Target Count",
+}

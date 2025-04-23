@@ -1,0 +1,1 @@
+{"displayName":"Test - Installation Exec Mode Dummy Test","category":"RPA JNIB Tests","tags":[""],"description":"","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/installationExecModeDummyTest.jtype","interactiveRuntimeRef":null,"executionMode":"taskOnly"}

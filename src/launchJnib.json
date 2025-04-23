@@ -1,0 +1,9 @@
+{
+	"@type" : {
+		"ref" : "/sys/type/construct/rpaConfig/launchJnib.jtype"
+	},
+	"@id" : "71c989f5-cbac-4de0-9437-1b6bedba9e35",
+	"path" : "/sys/jinb/lib/functions/launched.jnib",
+	"message" : "adsf",
+	"object" : "{}"
+}

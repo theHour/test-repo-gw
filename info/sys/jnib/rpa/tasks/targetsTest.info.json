@@ -1,0 +1,1 @@
+{"displayName":"Test - Targets","category":"RPA JNIB Tests","tags":[""],"description":"Basic Task where you can set the output status for the targets in the workflow","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/targetsTest.jtype","interactiveRuntimeRef":null}

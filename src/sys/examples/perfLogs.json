@@ -1,0 +1,386 @@
+{
+	"rpaConfig": {
+		"repeate": "10",
+		"body": "{ \"var\": \"val\" }"
+	},
+	"rpaState": {
+		"targetRefs": [
+			{
+				"node": {
+					"path": "/org/instance/construct/node/iosRouter/ASR1001.json"
+				},
+				"device": {
+					"entityId": "6f40448f-cc06-48a7-9327-34a3d37874c5",
+					"name": "ASR1001",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "d7d132b4-e1a5-4a78-8981-3e61247c5b07",
+					"nodeType": "iosRouter",
+					"managementState": "MANAGED",
+					"discoveryStatus": "ERROR",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.150.1.34",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"id": "b9796d40-a5fd-4dc4-9ee7-2a9c2afab8e0",
+									"instanceId": "b9796d40-a5fd-4dc4-9ee7-2a9c2afab8e0",
+									"credsId": "b9796d40-a5fd-4dc4-9ee7-2a9c2afab8e0",
+									"instanceName": "cisco"
+								}
+							}
+						},
+						"enablePassword": null
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/iosRouter/Cisco4351.json"
+				},
+				"device": {
+					"entityId": "b92b2123-b3e2-4bc6-9d26-5c17ef5acc12",
+					"name": "Cisco4351",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "b41bd16b-49a6-46d3-b659-76e22fd7d169",
+					"nodeType": "iosRouter",
+					"managementState": "MANAGED",
+					"discoveryStatus": "DISCOVERED",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.150.1.38",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"id": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"credsId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						},
+						"enablePassword": null
+					}
+				}
+			},
+			{
+				"device": {
+					"entityId": "b3d12f45-6985-42c6-986e-75590211416f",
+					"name": "DCS-7050QX-32S",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": null,
+					"nodeType": "sonicSwitch",
+					"managementState": "MANAGED",
+					"discoveryStatus": "ERROR",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"ip": "10.150.17.4",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						},
+						"enablePassword": null,
+						"connectionMethod": "cliConnection"
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/eosSwitch/DCS-7050S-64-F.json"
+				},
+				"device": {
+					"entityId": "043885cb-8fd4-4638-9cd0-bece8445bc9a",
+					"name": "DCS-7050S-64-F",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "e033b44e-2d3f-4c65-bc66-9c670ec91e53",
+					"nodeType": "eosSwitch",
+					"managementState": "MANAGED",
+					"discoveryStatus": "DISCOVERED",
+					"connectionMethod": "cliConnectionWithRest",
+					"connectionInformation": {
+						"connectionMethod": "cliConnectionWithRest",
+						"ip": "10.150.17.8",
+						"enablePassword": null,
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/exSwitch/EX4300-24T (master).json"
+				},
+				"device": {
+					"entityId": "94db53e2-9cbe-4f8c-886a-c0f2d010644c",
+					"name": "EX4300-24T (master)",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "39fbd636-9377-499f-93c3-f4eaede0683d",
+					"nodeType": "exSwitch",
+					"managementState": "MANAGED",
+					"discoveryStatus": "ERROR",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.150.2.6",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"instanceId": "c7f4af02-87c5-44a1-9575-336e758870ff",
+									"instanceName": "root"
+								}
+							}
+						},
+						"enablePassword": null
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/nxosSwitch/N5K-C5672UP.json"
+				},
+				"device": {
+					"entityId": "8583feae-139d-4258-83aa-66763562468f",
+					"name": "N5K-C5672UP",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "8eb28794-57c1-46d8-8b11-5e18f1021fef",
+					"nodeType": "nxosSwitch",
+					"managementState": "MANAGED",
+					"discoveryStatus": "ERROR",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.150.1.70",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						},
+						"enablePassword": null
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/iosRouter/CSR1.json"
+				},
+				"device": {
+					"entityId": "fab46ec0-10f5-42b3-a63e-bd5bba81cb36",
+					"name": "CSR1",
+					"description": "discovered",
+					"nodeId": "d80eb167-4e0c-4680-a178-bd5451b82629",
+					"nodeType": "iosRouter",
+					"managementState": "MANAGED",
+					"discoveryStatus": "DISCOVERED",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.0.0.27",
+						"enablePassword": null,
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [
+							{
+								"ip": "10.1.100.57",
+								"port": 22,
+								"type": "ssh",
+								"credentials": {
+									"@ref": {
+										"instance": {
+											"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+											"construct": "secret",
+											"type": "deviceUserPass",
+											"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+											"instanceName": "admin"
+										}
+									}
+								}
+							}
+						],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"id": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"credsId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/iosRouter/CSR2.json"
+				},
+				"device": {
+					"entityId": "ef31277d-d22e-414e-aef0-c5b1f39f5af2",
+					"name": "CSR2",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "5c47ebe0-8c8e-4b6e-8ab9-191463b52765",
+					"nodeType": "iosRouter",
+					"managementState": "MANAGED",
+					"discoveryStatus": "DISCOVERED",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.0.0.28",
+						"enablePassword": null,
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [
+							{
+								"ip": "10.1.100.57",
+								"port": 22,
+								"type": "ssh",
+								"credentials": {
+									"@ref": {
+										"instance": {
+											"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+											"construct": "secret",
+											"type": "deviceUserPass",
+											"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+											"instanceName": "admin"
+										}
+									}
+								}
+							}
+						],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"id": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"credsId": "c64317bf-bba3-4d3b-9124-c6bdec6d4a04",
+									"instanceName": "admin"
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"node": {
+					"path": "/org/instance/construct/node/iosSwitch/Cisco C9407.json"
+				},
+				"device": {
+					"entityId": "c3bd02d3-ded4-4b73-840c-9ae1194ac34e",
+					"name": "Cisco C9407",
+					"description": "AT changed description 1689246823.360058",
+					"nodeId": "9b8231cd-4544-4e67-b8ee-f05a56c585ab",
+					"nodeType": "iosSwitch",
+					"managementState": "MANAGED",
+					"discoveryStatus": "DISCOVERED",
+					"connectionMethod": "cliConnection",
+					"connectionInformation": {
+						"connectionMethod": "cliConnection",
+						"ip": "10.150.1.72",
+						"type": "ssh",
+						"port": 22,
+						"proxyList": [],
+						"credentials": {
+							"@ref": {
+								"instance": {
+									"organizationId": "a82f699a-ee00-4b6b-a462-39baf21de265",
+									"construct": "secret",
+									"type": "deviceUserPass",
+									"id": "15f1f23f-a1cd-4e7b-b734-8a23bbf30ba3",
+									"instanceId": "15f1f23f-a1cd-4e7b-b734-8a23bbf30ba3",
+									"credsId": "15f1f23f-a1cd-4e7b-b734-8a23bbf30ba3",
+									"instanceName": "glue_sqa"
+								}
+							}
+						},
+						"enablePassword": null
+					}
+				}
+			}
+		],
+		"environment": {
+			"user": {
+				"firstName": "Lino",
+				"lastName": "Carnesecca",
+				"username": "lcarnesecca@gluware.com",
+				"email": "lcarnesecca@gluware.com"
+			},
+			"organization": {
+				"id": "a82f699a-ee00-4b6b-a462-39baf21de265",
+				"name": "HTEC"
+			},
+			"workflow": {
+				"name": "x number of targets",
+				"devState": "TEST"
+			},
+			"execution": {
+				"id": "fc0c5a7b-e10f-432d-9ac1-ccbbb54a641d",
+				"started": 1695258912730,
+				"executedBy": {
+					"id": "5f44faf2-d2f6-411a-bf96-b3e0120bc2de",
+					"name": "lcarnesecca@gluware.com"
+				},
+				"error": {
+					"task": {
+						"message": ""
+					}
+				}
+			}
+		}
+	}
+}

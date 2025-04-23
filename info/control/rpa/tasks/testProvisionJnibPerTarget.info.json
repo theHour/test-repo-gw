@@ -1,0 +1,1 @@
+{"displayName":"Launch Provision Per Target","category":"RPA JNIB Tests","tags":[""],"description":"Launches unique provisioning per target","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/testProvisionJnibTarget.jtype","interactiveRuntimeRef":null}

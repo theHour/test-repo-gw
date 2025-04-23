@@ -1,0 +1,28 @@
+{
+	"@Info": {
+		"displayName": "CS Test",
+		"description": "",
+		"solutionTags": [
+			""
+		],
+		"preLoadJnib": true,
+		"scriptDependencies": {
+			"jnib": {
+				"/sys/jnib/scripts/csTest/csTest.jnib": {}
+			}
+		},
+		"domainDependencies": {},
+		"nodeDependencies": {}
+	},
+	"aaa": "",
+	"bbb": "",
+	"cli": "",
+	"ciMode@Select.options": {
+		"auto": {},
+		"manual": {
+			"ci@Ref": {
+				"path": "/org/instance/construct/global/conceptItem/*"
+			}
+		}
+	}
+}

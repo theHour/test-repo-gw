@@ -1,0 +1,14 @@
+{
+	"backup@Select.options" : {  
+		"backupId@Display.label" : "Backup ID",
+		"backupId": {
+			"backupId": "{{backUpIds}}"
+		},
+		"backupPattern": {
+			"latestSucessfulBackup": "",
+			"earliestBackupTime": "",
+			"latestBackupTime": "",
+			"backupNamePattern": ""
+		}
+	}
+}

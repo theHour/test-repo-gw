@@ -1,0 +1,27 @@
+// Copyright (C) 2022 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+"@Info": {
+    "displayName": "Test - Input parameters",
+    "category": "RPA JNIB Tests",
+    "tags": [""],
+    "description": "An example JType testing pulling input parameters from a task into the start object",
+    "auth": "operate",
+    "configTypeRef" : "/sys/type/construct/rpaConfig/exampleInputParameters.jtype",
+    "interactiveRuntimeRef" : null
+},
+
+run : function() {
+	
+	// TODO: Retrieve the RPA Configuration Data
+	var rpaConfig = _.get(getStartObj(), "rpaConfig", {});
+	log.info("Start Object" + JSON.stringify(rpaConfig, 0, 2));
+	
+	// TODO: code RPA Task here
+	
+	// TODO: If this RPA Task needs to return data for the following RPA tasks in the flow to capture, use the rpaResult property in the getFinishObj() object.
+	getFinishObj().rpaResult = {
+		rpaConfig: rpaConfig
+	};
+},

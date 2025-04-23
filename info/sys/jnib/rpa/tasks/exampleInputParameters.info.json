@@ -1,0 +1,1 @@
+{"displayName":"Test - Input parameters","category":"RPA JNIB Tests","tags":[""],"description":"An example JType testing pulling input parameters from a task into the start object","auth":"operate","configTypeRef":"/sys/type/construct/rpaConfig/exampleInputParameters.jtype","interactiveRuntimeRef":null}

@@ -1,0 +1,54 @@
+// Copyright (C) 2020 Gluware - All Rights Reserved
+// This feature package is provided as is with no implied warranties or fitness for a particular purpose.
+// Gluware, Inc. will not provide maintenance, support, updates, enhancements or modifications.
+
+util : loadNIB("/sys/jnib/lib/shared/util.lib.jnib"),
+
+scriptTag : "csTest",
+
+run : function() {
+
+	// TODO: Add here the processing code for the csTest network script.
+	// The instance data is accessible using the startObj (getStartObj().data.script.self)
+	// If the node (NodeClass) construct is needed, use the util.scriptInit() function to build the node.
+	// In order to enforce a node type to this custom script, use an array of the desired node types as follows:
+	//   � util.scriptInit("iosRouter"); to allow "iosRouter" node type only;
+	//   � util.scriptInit(["iosRouter", "iosSwitch"]); to allow both "iosRouter" and "iosSwitch" node types.
+	// If a SSH connection to the node is required, use the following calls:
+	//   node.shell = getNodeConnection();
+	//   node.shell.setResponseInactivityTimeout(30);
+	//   node.detect();
+	// Note: Only one node can be handled and detected by a custom script.
+    log.debug("Script startObj before starting script work: " + JSON.stringify(getStartObj(), null, 2));
+	var scriptData = getStartObj().data.script.self;
+	log.tag({ "scriptData" : scriptData }).debug("Watching Instance Data");
+	
+	// Creates the node object (NodeClass) (optional)
+	util.scriptInit();
+
+	// Initiates the connection to the node (optional)
+	node.shell = getNodeConnection();
+	node.shell.setResponseInactivityTimeout(30);
+	
+	// Launches the node detection and populates the discovered data in the node object (optional)
+	node.detect();
+
+	// Quick reminder of the shell commands available:
+	//   � connect() triggers the connection to the node (requires a valid entryConnection property in the node object).
+	//   � disconnect() kills the connection to the node.
+	//   � send() sends one or more CLI commands to the node followed by a CR/LF and tracks the prompt (when tracking is available).
+	//   � write() behaves like send() without the prompt tracking.
+	//   � writeRaw() sends one or more set of characters/CLI commands to the node (no CR or LF). 
+	//   � getSendResponseStr() is the method that gets the CLI response.
+	//   � getSendResponseMatch() is the equivalent that is mapped to a regex match.
+	//   � setResponseInactivityTimeout() defines the inactivity timer the engine will wait the node response.
+	//   � registerResponseInactivity(<function>, args�) calls the <function> when the inactivity timer has been triggered.
+	//   � registerConnectSuccess(<function>, args�) calls the <function> when the connection with the node is successful.
+	//   � isClosed() returns "true" if the connection to the node is closed; "false" otherwise.
+	//   � discard() purges the connection object (required for reestablishing a connection to a node).
+	
+	log.debug(JSON.stringify(getStartObj(), null, 2));
+
+	//node.shell.send(scriptData.cli);
+		
+}

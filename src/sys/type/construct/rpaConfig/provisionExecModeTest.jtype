@@ -1,0 +1,10 @@
+{
+	"script@Display.label" : "Script",
+	"script@Ref": {
+		"path": "/org/instance/construct/script/csTest/*"
+	},
+	"preview": true,
+	"preview@Display.label": "Preview",
+	"summaryDescription" : "",
+	"addedLog" : "",
+}

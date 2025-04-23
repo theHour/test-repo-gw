@@ -1,0 +1,231 @@
+{
+	"type1@Display.tagList" : { "labels" : [], "minLineCount" : 5  },
+	"type1@Display.tagList.labels": ["NCOS"],
+    "readOnlyNumber": 96,
+    "readOnlyNumber@Display.readOnly": true,
+    "numberWithValidationConfig": -2,
+    "numberWithValidationConfig@Number": {
+        "min": 1,
+        "max": 10,
+        "onlyInteger": true,
+        "step": 1.2
+    },
+    "/sys/type/construct/vendorDetails.jtype@TypeRef": {},
+    "ipPrefix@Display.label": "IPv4 Prefix",
+    "ipPrefix@String": {
+        "pattern": "((?:\\d+\\.){3}\\d+)\\/(\\d+)"
+    },
+    "policies@Display.label": "State Assessment Policies",
+    "policies@Ref": {
+        "paths": [
+            "/org/instance/construct/global/cliStatePolicy/*"
+        ],
+        "many": true
+    },
+    
+    "policies@Display.pickList": {
+        "optionsLabel": "Available",
+        "selectedLabel": "Selected",
+        "showReorder": true,
+        "showCheckAll": true,
+        "showUnCheckAll": true,
+        "multiSelect": true,
+        "minLineCount": 6
+    },
+    "node@Display.label": "Meraki Cloud Service",
+    "node@Required!Ref": {
+        "path": "/org/instance/construct/node/merakiCloudService/*"
+    },
+    "devices@Display.label": "",
+    "devices@Display.addLabel": "Meraki Devices",
+    "devices": [
+        {
+            "name@Required!": "",
+            "name@Display.label": "Node name",
+            "type@Display.label": "Device type",
+            "type@Required!Enum": [
+                "appliance",
+                "accessPoint",
+                "cellularGateway",
+                "switch"
+            ],
+            "type@Display.enum": [
+                "Appliance",
+                "Access-Point",
+                "Cellular Gateway",
+                "Switch"
+            ],
+            "serialNumber@Display.label": "Serial number",
+            "serialNumber@Required!String": {
+                "pattern": "[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}"
+            }
+        }
+    ],
+    "productTypes@Display.label": "Product types",
+    "productTypes": {
+        "appliance@Display.label": "Appliance - MX/Z3",
+        "appliance": false,
+        "switch@Display.label": "Switch - MS",
+        "switch": false,
+        "wireless@Display.label": "Access-Point - MR/CW",
+        "wireless": false,
+        "cellularGateway@Display.label": "Cellular Gateway - MG",
+        "cellularGateway": false
+    },
+    "targets@Display.label": "Meraki devices",
+    "targets@Ref": {
+        "paths": [
+            "/org/instance/construct/node/merakiAppliance/*",
+            "/org/instance/construct/node/merakiAccessPoint/*",
+            "/org/instance/construct/node/merakiCellularGateway/*",
+            "/org/instance/construct/node/merakiSwitch/*"
+        ],
+        "many": true
+    },
+    "targets@Display.pickList": {
+        "optionsLabel": "Available",
+        "selectedLabel": "Selected",
+        "showReorder": true,
+        "showCheckAll": true,
+        "showUnCheckAll": true,
+        "multiSelect": true,
+        "minLineCount": 6
+    },
+    "attachedStorage@Display.tab": "Attached Storage",
+    "attachedStorage": {
+        "arrayPath@Display.label": "Path to device array in output",
+        "arrayPath": "",
+        "storeOptions@Display.label": "Storing Data Method",
+        "storeOptions@Select.options": {
+            "perNode@Display.label": "Store Data Per Node",
+            "perNode": {
+                "dataModelJtype@Display.label": "Data Model JTYPE",
+                "dataModelJtype": "",
+                "dataModelInstance@Display.label": "Data Model instance",
+                "dataModelInstance": ""
+            },
+            "customLocation@Display.label": "Custom Location",
+            "customLocation": {
+                "constructName@Display.label": "Construct Name",
+                "constructName": "",
+                "constructType@Display.label": "Construct Type",
+                "constructType@Enum": [
+                    "node",
+                    "domain"
+                ],
+                "constructInst@Display.label": "Construct Instance Name",
+                "constructInst": "",
+                "dataModelJtype@Display.label": "Data Model JTYPE",
+                "dataModelJtype": "",
+                "dataModelInstance@Display.label": "Data Model instance",
+                "dataModelInstance": ""
+            }
+        },
+        "gluApi@Display.label": "Gluware API Service Provider: ",
+        "gluApi@Ref": {
+            "paths": [
+                "/org/instance/construct/global/apiServiceProvider/*"
+            ]
+        },
+        "orgName@Display.label": "Gluware Organization Name:",
+        "orgName": ""
+    },
+    "contractList@Display.tab": "Standard Contracts",
+    "contractList": {
+        "contracts@Display.addLabel": "Add Contract",
+        "contracts@Display.label": "Contracts",
+        "contracts": [
+            {
+                "contract@Display.label": "Contract",
+                "contract": {
+                    "name@Display.label": "Name",
+                    "name@Required!": "",
+                    "scope@Display.label": "Scope",
+                    "scope@Required!Enum": [
+                        "VRF",
+                        "Tenant",
+                        "Global",
+                        "Application Profile"
+                    ],
+                    "scope": "VRF",
+                    "qosClass@Display.label": "QoS Class",
+                    "qosClass@Enum": [
+                        "Level1",
+                        "Level2",
+                        "Level3",
+                        "Level4",
+                        "Level5",
+                        "Level6",
+                        "Unspecified"
+                    ],
+                    "tarDscp@Display.label": "Target DSCP",
+                    "tarDscp@Enum": [
+                        "AF11",
+                        "AF12",
+                        "AF13",
+                        "AF21",
+                        "AF22",
+                        "AF23",
+                        "AF31",
+                        "AF32",
+                        "AF33",
+                        "AF41",
+                        "AF42",
+                        "AF43",
+                        "CS0",
+                        "CS1",
+                        "CS3",
+                        "CS4",
+                        "CS5",
+                        "CS6",
+                        "CS7",
+                        "Expedited_Forwarding",
+                        "Voice_Admit",
+                        "Unspecified"
+                    ]
+                }
+            }
+        ]
+    },
+    "inputFormat@Display.label": "Input Format",
+    "inputFormat": [
+        {
+            "type@Display.label": "Type",
+            "type@Select.options": {
+                "string@Display.label": "String",
+                "string": {
+                    "value@Display.label": "Value",
+                    "value": ""
+                },
+                "deviceProp@Display.label": "Device Property",
+                "deviceProp": {
+                    "value@Enum": [
+                        "entityId",
+                        "constructPath",
+                        "name",
+                        "nodeType",
+                        "description",
+                        "discoveryStatus"
+                    ],
+                    "value@Display.enum": [
+                        "Entity ID",
+                        "Construct Path",
+                        "Name",
+                        "Node Type",
+                        "Description",
+                        "Discovery Status",
+                        "Management State"
+                    ]
+                },
+                "targetVar@Display.label": "Target Variable",
+                "targetVar": {
+                    "value@Display.label": "Value",
+                    "value": {
+                        "@Complete.allType": ""
+                    },
+                    "value@Display.description": "Enter the target variable from the workflow `{{targetVariable}}`"
+                }
+            }
+        }
+    ]
+}
